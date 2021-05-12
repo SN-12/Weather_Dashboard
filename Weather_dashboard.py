@@ -22,7 +22,7 @@ def get_CurrentMetrics(XMLFile):
 
 def get_StrSlic(str,strFlag1, strFlag2):
     """
-    Returns the value between strFlag1 and strFlag2 in str
+    Returns the value between strFlag1 and strFlag2 in the str
     """
     start = str.find(strFlag1)
     start += len(strFlag1)
@@ -54,11 +54,11 @@ def publishOnMqqr(tph_tuple):
     metricToSent = f'T:{tph_tuple[0]:.2f}\nH:{tph_tuple[2]:.2f}\nP:{tph_tuple[1]:.2f}'
     print(metricToSent)
     metricToSent = f'T:{tph_tuple[0]:.2f}'
-    ret = client1.publish(topic, metricToSent)  # publish
+    ret = client1.publish(topic, metricToSent)  # publish Temperature
     metricToSent = f'H:{tph_tuple[2]:.2f}'
-    ret = client1.publish(topic, metricToSent)  # publish
+    ret = client1.publish(topic, metricToSent)  # publish Humidity
     metricToSent = f'P:{tph_tuple[1]:.2f}'
-    ret = client1.publish(topic, metricToSent)  # publish
+    ret = client1.publish(topic, metricToSent)  # publish Pressure
 
 
 def loadRSS():
